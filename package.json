@@ -1,0 +1,25 @@
+{
+  "name": "bs-playlist-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/node": "^16.4.2",
+    "@types/yargs": "^17.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "beatsaver-api": "^1.0.1",
+    "colors": "^1.4.0",
+    "yargs": "^17.0.1"
+  }
+}
