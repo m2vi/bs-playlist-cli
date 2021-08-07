@@ -1,17 +1,18 @@
+import BeatSaverAPI from 'beatsaver-api';
 import { SongProps } from '../types';
 import { plain, succ, err, k } from './log';
 
-export const getSong = async (api: any, key: string): Promise<SongProps> => {
+export const getSong = async (api: BeatSaverAPI, key: string): Promise<SongProps> => {
   try {
     plain(`Started adding ${k(key)}`);
 
-    const map = await api.getMapDetailsByKey(key);
+    const map = await api.getMapByID(key);
 
     const mapEntry: SongProps = {
-      songName: map?.name!,
-      hash: map?.hash!,
-      levelid: map?._id!,
-      levelAuthorName: map?.uploader?.username!,
+      songName: map.name,
+      hash: map.versions[0].hash,
+      levelid: map.id,
+      levelAuthorName: map.uploader.name,
     };
 
     succ(`Finished adding ${k(key)}`);
